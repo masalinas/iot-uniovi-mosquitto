@@ -7,13 +7,15 @@ docker-compose up -d
 ```
 
 ## Add or update a authentication user account
-The default account created its: **admin/password**
+The default account created its: **admin/password**. To create new ones execute:
 
 ```shell
 docker-compose exec mosquitto mosquitto_passwd -b /mosquitto/config/password.txt admin uniovi
 ```
 
 ## Delete a authentication user account
+To delete a account execute:
+
 ```shell
 docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt admin
 ```
