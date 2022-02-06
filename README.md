@@ -22,9 +22,8 @@ docker-compose down
 ## Get mosquitto logs
 docker-compose logs
 
-## Check and publish a message in a topic
-mosquitto_pub -h localhost -u admin -P uniovi -t sensor/temperature -m 35
-
 ## Check a subscrive to the previous topic
 mosquitto_sub -h localhost -u admin -P uniovi -t "sensor/temperature"
 
+## Check and publish a message in a topic
+mosquitto_pub -h localhost -u admin -P uniovi -t sensor/temperature -m 35
