@@ -1,29 +1,47 @@
 # Description
 Iot Mosquitto Docker Service
 
-## Create and start  mosquitto service
+## Create and start service
+```shell
 docker-compose up -d
+```
 
 ## Add or update a authentication user account
+```shell
 docker-compose exec mosquitto mosquitto_passwd -b /mosquitto/config/password.txt admin uniovi
+```
 
 ## Delete a authentication user account
+```shell
 docker-compose exec mosquitto mosquitto_passwd -D /mosquitto/config/password.txt admin
+```
 
-## Remove stop 
+## Stop service
+```shell
 docker-compose stop
+```
 
-## Restart mosquitto service
+## Restart service
+```shell
 docker-compose start
+```
 
-## Remove all resources
+## Remove service resources
+```shell
 docker-compose down
+```
 
-## Get mosquitto logs
+## Get service logs
+```shell
 docker-compose logs
+```
 
-## Check a subscrive to the previous topic
-mosquitto_sub -h localhost -u admin -P uniovi -t "sensor/temperature"
+## Subscribe to a broker topic
+```shell
+mosquitto_sub -h localhost -u admin -P uniovi -t sensor/temperature
+```
 
-## Check and publish a message in a topic
+## Publish a message to a broker topic
+```shell
 mosquitto_pub -h localhost -u admin -P uniovi -t sensor/temperature -m 35
+```

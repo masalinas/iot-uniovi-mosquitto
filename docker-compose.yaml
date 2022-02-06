@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  mosquitto:
+  mqtt-broker:
     image: eclipse-mosquitto
-    container_name: mosquitto
+    container_name: mosquitto-iot
     ports:
       - 1883:1883
       - 9001:9001
@@ -11,3 +11,9 @@ services:
       - ./config:/mosquitto/config
       - ./data:/mosquitto/data
       - ./log:/mosquitto/log
+    networks:
+      - network-name
+
+networks:
+    network-name:
+      name: uniovi
