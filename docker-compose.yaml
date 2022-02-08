@@ -1,9 +1,9 @@
-version: "3"
+version: "3.7"
 
 services:
-  mqtt-broker:
+  broker:
     image: eclipse-mosquitto
-    container_name: mosquitto-iot
+    container_name: broker-iot
     ports:
       - 1883:1883
       - 9001:9001
